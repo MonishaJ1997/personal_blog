@@ -4,12 +4,12 @@ import BlogForm from "./components/BlogForm";
 import BlogList from "./components/BlogList";
 import ThemeToggle from "./components/ThemeToggle";
 import { ThemeProvider, useTheme } from "./context/ThemeContext";
-import { useLocalStorage } from "./hooks/useLocalStorage";
+import { UseLocalStorage } from "./hooks/UseLocalStorage";
 import "./components/styles.css";
 
 const AppContent = () => {
   const { theme } = useTheme();
-  const [posts, setPosts] = useLocalStorage("blogPosts", []);
+  const [posts, setPosts] = UseLocalStorage("blogPosts", []);
 
   const addPost = (post) => {
     setPosts([post, ...posts]);
